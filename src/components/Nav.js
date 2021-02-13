@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { setAuthedUser } from '../actions/authedUser';
 class Nav extends Component {
   state = {
     toHome: false,
   };
   handleLogout = (e) => {
     e.preventDefault();
+    this.props.dispatch(setAuthedUser(null));
   };
 
   render() {

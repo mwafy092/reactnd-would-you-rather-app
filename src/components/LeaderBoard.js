@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import Nav from './Nav';
-class Home extends Component {
+class LeaderBoard extends Component {
   render() {
     return (
       <div>
         <Nav />
+        leader board
       </div>
     );
   }
 }
 
-export default Home;
+export default LeaderBoard;
