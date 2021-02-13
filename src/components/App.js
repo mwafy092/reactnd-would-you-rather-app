@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import handleInitialData from '../actions/shared';
 import { connect } from 'react-redux';
 import Login from './Login';
+import Nav from './Nav';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 class App extends Component {
   componentDidMount() {
@@ -15,7 +16,9 @@ class App extends Component {
         {authedUser === null ? (
           <Route component={Login} />
         ) : (
-          <Fragment>Home</Fragment>
+          <Fragment>
+            <Nav />
+          </Fragment>
         )}
       </Router>
     );
