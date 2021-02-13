@@ -3,6 +3,7 @@ import handleInitialData from '../actions/shared';
 import { connect } from 'react-redux';
 import Login from './Login';
 import Nav from './Nav';
+import Home from './Home';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 class App extends Component {
   componentDidMount() {
@@ -13,13 +14,15 @@ class App extends Component {
 
     return (
       <Router>
-        {authedUser === null ? (
-          <Route component={Login} />
-        ) : (
-          <Fragment>
-            <Nav />
-          </Fragment>
-        )}
+        <div className='app'>
+          {authedUser === null ? (
+            <Route render={() => <Route path='/' exact component={Login} />} />
+          ) : (
+            <Fragment>
+              <Nav />
+            </Fragment>
+          )}
+        </div>
       </Router>
     );
   }

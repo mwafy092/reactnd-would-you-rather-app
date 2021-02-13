@@ -115,3 +115,61 @@ body {
   font-size: 0.8rem;
   font-weight: 600;
 }
+.avatar {
+  width: 30px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #337cab;
+}
+
+.link {
+  text-decoration: none;
+  margin: 0 2rem;
+  font-weight: 600;
+  color: #337cab;
+  padding: 1rem;
+  transition: all 250ms ease-in-out;
+}
+.link:hover {
+  background-color: #ddd;
+}
+
+.nav-login {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem 1rem;
+  align-items: center;
+}
+
+.login-data span {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.login-data .hello {
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
+.login-data img {
+  margin: 0 1rem;
+}
+
+.logout {
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 1px solid #337cab;
+  background-color: #fff;
+  font-weight: 600;
+  color: #337cab;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 250ms ease-in-out;
+}
+.logout:hover {
+  box-shadow: none;
+}
