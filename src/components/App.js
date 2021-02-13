@@ -1,9 +1,30 @@
-import React, { Component } from 'react';
-
+import React, { Component, Fragment } from 'react';
+import handleInitialData from '../actions/shared';
+import { connect } from 'react-redux';
+import Login from './Login';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 class App extends Component {
+  componentDidMount() {
+    this.props.dispatch(handleInitialData());
+  }
   render() {
-    return <div>hello App</div>;
+    const { authedUser } = this.props;
+
+    return (
+      <Router>
+        {authedUser === null ? (
+          <Route component={Login} />
+        ) : (
+          <Fragment>Home</Fragment>
+        )}
+      </Router>
+    );
   }
 }
 
-export default App;
+function mapStateToProps({ authedUser }) {
+  return {
+    authedUser,
+  };
+}
+export default connect(mapStateToProps)(App);
