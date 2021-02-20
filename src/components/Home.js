@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import AllQuestions from './AllQuestions';
+import AnsweredQuestions from './AnsweredQuestions';
 import UnansweredQuestions from './UnansweredQuestions';
 class Home extends Component {
   state = {
@@ -20,7 +20,7 @@ class Home extends Component {
               active === 'all' ? 'switcher active-switcher' : 'switcher'
             }
             onClick={() => this.switcher('all')}>
-            All questions
+            Answered questions
           </span>
           <span
             className={
@@ -31,7 +31,7 @@ class Home extends Component {
           </span>
         </div>
         <div className='questions-container'>
-          {active === 'all' ? <AllQuestions /> : <UnansweredQuestions />}
+          {active === 'all' ? <AnsweredQuestions /> : <UnansweredQuestions />}
         </div>
       </div>
     );

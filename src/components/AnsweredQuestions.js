@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-class AllQuestions extends Component {
+class AnsweredQuestions extends Component {
   render() {
-    const { questions, users } = this.props;
+    const { questions, users, user } = this.props;
     return (
       <div className='all-question'>
-        {Object.keys(questions).map((key) => {
+        {Object.keys(user.answers).map((key) => {
           const user = users[questions[key].author];
           return (
             <div key={key} className='question'>
@@ -30,10 +30,11 @@ class AllQuestions extends Component {
   }
 }
 
-const mapStateToProps = ({ questions, users }) => {
+const mapStateToProps = ({ questions, users, authedUser }) => {
   return {
     questions,
     users,
+    user: users[authedUser.split(' ').join('').toLowerCase()],
   };
 };
-export default connect(mapStateToProps)(AllQuestions);
+export default connect(mapStateToProps)(AnsweredQuestions);
