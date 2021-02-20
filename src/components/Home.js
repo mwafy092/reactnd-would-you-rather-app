@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import AllQuestions from './AllQuestions';
+import UnansweredQuestions from './UnansweredQuestions';
 class Home extends Component {
   state = {
-    active: '',
+    active: 'all',
   };
 
   switcher = (value) => {
@@ -28,7 +30,9 @@ class Home extends Component {
             Unanswered questions
           </span>
         </div>
-        <div className='questions-container'></div>
+        <div className='questions-container'>
+          {active === 'all' ? <AllQuestions /> : <UnansweredQuestions />}
+        </div>
       </div>
     );
   }

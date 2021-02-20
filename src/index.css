@@ -45,7 +45,7 @@ body {
 }
 .login-form h3 {
   font-size: 1.5rem;
-  color: #337cab;
+  color: #02733e;
   font-weight: 600;
 }
 .login-form select {
@@ -68,7 +68,7 @@ body {
   height: 40px;
   font-size: 1.2rem;
   color: #fff;
-  background-color: #337cab;
+  background-color: #02733e;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -85,7 +85,7 @@ body {
   height: 40px;
   font-size: 1.2rem;
   color: #aaa;
-  background-color: #337cab;
+  background-color: #02733e;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -123,14 +123,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #337cab;
+  border-bottom: 2px solid #02733e;
 }
 
 .link {
   text-decoration: none;
   margin: 0 2rem;
   font-weight: 600;
-  color: #337cab;
+  color: #02733e;
   padding: 1rem;
   transition: all 250ms ease-in-out;
 }
@@ -162,10 +162,10 @@ body {
 .logout {
   padding: 5px 10px;
   border-radius: 5px;
-  border: 1px solid #337cab;
+  border: 1px solid #02733e;
   background-color: #fff;
   font-weight: 600;
-  color: #337cab;
+  color: #02733e;
   cursor: pointer;
   transition: all 250ms ease-in-out;
   margin-left: 2rem;
@@ -176,7 +176,7 @@ body {
 
 .questions {
   border: 1px solid #999;
-  width: 50%;
+  width: 600px;
   margin: 25px auto;
 }
 
@@ -184,7 +184,7 @@ body {
   font-size: 16px;
   display: flex;
   justify-content: space-between;
-  background-color: #eee;
+  border-bottom: 1px solid #ddd;
 }
 
 .switcher {
@@ -202,4 +202,58 @@ body {
   background-color: #000;
   color: #fff;
   transition: all 250ms ease-in-out;
+}
+
+.question {
+  width: 90%;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  margin: 1rem;
+  border-radius: 5px;
+}
+
+.question-header {
+  color: #02733e;
+  background-color: #ddd;
+  padding: 1rem;
+  font-weight: bold;
+}
+
+.question-data {
+  background-color: #fff;
+  padding: 1rem;
+  display: flex;
+}
+
+.question-user-avatar {
+  width: 125px;
+  border-right: 1px solid #ddd;
+  margin-right: 2rem;
+}
+
+.question-info p {
+  font-size: 0.9rem;
+}
+.question-info h3 {
+  font-size: 1.1rm;
+  color: #02733e;
+  margin-bottom: 1rem;
+}
+
+.question-info h4 {
+  color: #02733e;
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.question-info button {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  padding: 5px 25px;
+  background-color: #02733e;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
