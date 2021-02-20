@@ -257,3 +257,15 @@ body {
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
+
+.question-date {
+  background-color: red;
+  display: inline-block;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin-bottom: -5px;
+  margin-left: -5px;
+}
