@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import ProgressBar from '@ramonak/react-progress-bar';
 
 class Question extends Component {
   render() {
@@ -8,7 +9,9 @@ class Question extends Component {
     const user = users[authedUser.split(' ').join('').toLowerCase()];
     const answered = Object.keys(user.answers).includes(questionId);
     const quest = questions[questionId];
-
+    const optionOneVotes = quest.optionOne.votes.length;
+    const optionTwoVotes = quest.optionTwo.votes.length;
+    const votesTotal = optionOneVotes + optionTwoVotes;
     if (answered) {
       return (
         <div className='poll'>
@@ -21,8 +24,12 @@ class Question extends Component {
               <h3>Results:</h3>
               <div className='poll-one'>
                 <p>{quest.optionOne.text}</p>
+                <ProgressBar
+                  bgcolor={'#02733e'}
+                  completed={Math.round((optionOneVotes / votesTotal) * 100)}
+                />
                 <p className='poll-votes'>
-                  has {quest.optionOne.votes.length} vote
+                  {optionOneVotes} out of {votesTotal} votes
                 </p>
                 {quest.optionOne.votes.includes(user.id) && (
                   <p className='your-vote'>
@@ -34,8 +41,12 @@ class Question extends Component {
               </div>
               <div className='poll-two'>
                 <p>{quest.optionTwo.text}</p>
+                <ProgressBar
+                  bgcolor={'#02733e'}
+                  completed={Math.round((optionTwoVotes / votesTotal) * 100)}
+                />
                 <p className='poll-votes'>
-                  has {quest.optionTwo.votes.length} vote
+                  {optionTwoVotes} out of {votesTotal} votes
                 </p>
                 {quest.optionTwo.votes.includes(user.id) && (
                   <p className='your-vote'>
