@@ -6,6 +6,7 @@ import Home from './Home';
 import { Route } from 'react-router-dom';
 import NewQuestion from './NewQuestion';
 import LeaderBoard from './LeaderBoard';
+import Question from './Question';
 import Nav from './Nav';
 class App extends Component {
   componentDidMount() {
@@ -23,7 +24,8 @@ class App extends Component {
             <Nav />
             <Route path='/' exact component={Home} />
             <Route path='/newQuestion' component={NewQuestion} />
-            <Route path='/LeaderBoard' component={LeaderBoard} />
+            <Route path='/leaderBoard' component={LeaderBoard} />
+            <Route path='/questions/:id' component={Question} />
           </Fragment>
         )}
       </div>

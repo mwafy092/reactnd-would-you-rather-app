@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { formatDate } from '../utils/helpers';
+import { Link } from 'react-router-dom';
 class UnansweredQuestions extends Component {
   render() {
     const { questions, users, user } = this.props;
@@ -29,7 +30,11 @@ class UnansweredQuestions extends Component {
                   <p>{item.optionOne.text}</p>
                   <h4>OR</h4>
                   <p>{item.optionTwo.text}</p>
-                  <button>View Poll</button>
+                  <Link
+                    to={`questions/${item.id}`}
+                    style={{ textDecoration: 'none', color: '#FFF' }}>
+                    <button>View Poll</button>
+                  </Link>
                 </div>
               </div>
             </div>
