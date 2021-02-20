@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { setAuthedUser } from '../actions/authedUser';
 class Nav extends Component {
@@ -8,6 +8,7 @@ class Nav extends Component {
   };
   handleLogout = (e) => {
     e.preventDefault();
+    <Redirect to='/' />;
     this.props.dispatch(setAuthedUser(null));
   };
 

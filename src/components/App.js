@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import handleInitialData from '../actions/shared';
 import { connect } from 'react-redux';
 import Login from './Login';
@@ -6,6 +6,7 @@ import Home from './Home';
 import { Route } from 'react-router-dom';
 import NewQuestion from './NewQuestion';
 import LeaderBoard from './LeaderBoard';
+import Nav from './Nav';
 class App extends Component {
   componentDidMount() {
     this.props.dispatch(handleInitialData());
@@ -18,10 +19,13 @@ class App extends Component {
         {authedUser === null ? (
           <Login />
         ) : (
-          <Route path='/' exact component={Home} />
+          <Fragment>
+            <Nav />
+            <Route path='/' exact component={Home} />
+            <Route path='/newQuestion' component={NewQuestion} />
+            <Route path='/LeaderBoard' component={LeaderBoard} />
+          </Fragment>
         )}
-        <Route path='/newQuestion' component={NewQuestion} />
-        <Route path='/LeaderBoard' component={LeaderBoard} />
       </div>
     );
   }
