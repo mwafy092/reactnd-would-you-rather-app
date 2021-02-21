@@ -15,11 +15,12 @@ class Question extends Component {
     const answer = this.state.selectedOption;
     console.log(user, qid, answer);
     dispatch(handleSaveQuestionAnswer(user, qid, answer));
-    // this.props.dispatch(handleSaveQuestionAnswer(authedUser, qid, answer));
   };
+
   handleChange = (e) => {
     this.setState({ selectedOption: e.target.value });
   };
+
   render() {
     const questionId = this.props.match.params.id;
     const { authedUser, users, questions } = this.props;

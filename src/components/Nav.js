@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { setAuthedUser } from '../actions/authedUser';
+import { FiLogOut } from 'react-icons/fi';
+
 class Nav extends Component {
   state = {
     toHome: false,
@@ -20,10 +22,10 @@ class Nav extends Component {
           <Link to='/' className='link'>
             Home
           </Link>
-          <Link to='newQuestion' className='link'>
+          <Link to='/newQuestion' className='link'>
             New Question
           </Link>
-          <Link to='leaderBoard' className='link'>
+          <Link to='/leaderBoard' className='link'>
             LeaderBoard
           </Link>
         </div>
@@ -36,6 +38,7 @@ class Nav extends Component {
           </div>
           <button onClick={this.handleLogout} className='logout'>
             Logout
+            <FiLogOut size={20} />
           </button>
         </div>
       </div>
