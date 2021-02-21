@@ -22,10 +22,10 @@ class Nav extends Component {
           <Link to='/' className='link'>
             Home
           </Link>
-          <Link to='/newQuestion' className='link'>
+          <Link to='/add' className='link'>
             New Question
           </Link>
-          <Link to='/leaderBoard' className='link'>
+          <Link to='/leaderboard' className='link'>
             LeaderBoard
           </Link>
         </div>
