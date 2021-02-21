@@ -33,7 +33,7 @@ class Login extends Component {
           <div className='login-form-container'>
             <div className='login-logo'>
               <img
-                src='https://avatars.dicebear.com/4.5/api/identicon/.svg'
+                src='https://avatars.dicebear.com/4.5/api/bottts/y.svg'
                 className='avatar-logo'
                 alt='login avatar'
               />
@@ -41,9 +41,7 @@ class Login extends Component {
             <div className='login-form'>
               <h3>Login</h3>
               <div className='users-info'>
-                {users.length !== 0 && (
-                  <p>Currently We have {users.length} users</p>
-                )}
+                {users.length !== 0 && <p>Select from {users.length} users</p>}
 
                 <div className='users-avatar'>
                   {users &&

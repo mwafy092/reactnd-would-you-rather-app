@@ -468,3 +468,24 @@ body {
   padding: 8px;
   border-radius: 5px;
 }
+
+.bad-route {
+  width: 700px;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.bad-route h1 {
+  color: red;
+  margin: 1rem 0;
+}
+
+.bad-route p {
+  color: #444;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.bad-route img {
+  width: 400px;
+}
