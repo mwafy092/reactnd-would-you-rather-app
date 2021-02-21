@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { handleSaveQuestionAnswer } from '../actions/users';
 import ProgressBar from '@ramonak/react-progress-bar';
+import { Redirect } from 'react-router-dom';
+import BadRoute from './BadRoute';
 class Question extends Component {
   state = {
     selectedOption: '',
@@ -27,9 +29,15 @@ class Question extends Component {
     const user = users[authedUser.split(' ').join('').toLowerCase()];
     const answered = Object.keys(user.answers).includes(questionId);
     const quest = questions[questionId];
-    const optionOneVotes = quest.optionOne.votes.length;
-    const optionTwoVotes = quest.optionTwo.votes.length;
+    const secureID = Object.keys(questions).includes(questionId);
+    const optionOneVotes = secureID && quest.optionOne.votes.length;
+    const optionTwoVotes = secureID && quest.optionTwo.votes.length;
     const votesTotal = optionOneVotes + optionTwoVotes;
+
+    if (!secureID) {
+      return <BadRoute />;
+    }
+
     if (answered) {
       return (
         <div className='poll'>
