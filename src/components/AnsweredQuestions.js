@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 class AnsweredQuestions extends Component {
   render() {
     const { questions, users, user } = this.props;
-    console.log(user.answers);
     const sortedAnswered = Object.keys(user.answers)
       .map((key) => questions[key])
       .sort((a, b) => b.timestamp - a.timestamp);
